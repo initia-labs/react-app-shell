@@ -1,0 +1,128 @@
+.initia-app-menu {
+  width: 100%;
+  height: 100%;
+}
+
+.initia-app-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.initia-app-menu-trigger-icon-container {
+  cursor: pointer;
+  background: #000000;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: #757C82;
+  transition: all 0.2s ease;
+
+  display: grid;
+  place-items: center;
+}
+
+.initia-app-menu-trigger:hover .initia-app-menu-trigger-icon-container {
+  color: #F5F5F5;
+}
+
+.initia-app-menu-trigger-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.initia-app-menu-popover {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  width: 256px;
+  background: #242424;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 20px 30px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  transition-property: opacity, scale;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+  transform-origin: top left;
+
+  opacity: 0;
+  scale: 0.9;
+}
+
+.initia-app-menu-popover.show-app-menu {
+  opacity: 1;
+  scale: 1;
+}
+
+.initia-app-menu-drawer {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+
+  transition-property: opacity, scale;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+  transform-origin: bottom center;
+
+  opacity: 0;
+  scale: 0.99;
+}
+
+.initia-app-menu-drawer.show-app-menu {
+  opacity: 1;
+  scale: 1;
+}
+
+.initia-app-menu-drawer-content {
+  width: 100%;
+  background: #242424;
+  padding: 24px 16px 14px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.initia-app-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.initia-app-menu-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.initia-app-menu-list-item.sm {
+  padding: 12px 16px;
+}
+.initia-app-menu-list-item.sm:not(:last-child) { 
+  margin-bottom: 4px;
+}
+
+.initia-app-menu-list-item.md {
+  padding: 22px 16px;
+}
+
+.initia-app-menu-list-item.current {
+  background: #070708;
+}
+
+.initia-app-menu-list-item.link:hover {
+  background: #383D42;
+  cursor: pointer;
+}
+
+.initia-app-menu-list-item-logo {
+  height: 20px;
+  min-height: 20px;
+}

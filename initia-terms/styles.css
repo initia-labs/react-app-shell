@@ -1,0 +1,236 @@
+
+.initia-terms {
+  position: absolute;
+  display: flex;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  font-family: "Pilat Wide";
+
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+}
+
+.initia-terms[data-screen-size="sm"] {
+  align-items: end;
+  transform-origin: bottom center;
+}
+
+.initia-terms.accepted {
+  scale: 0.9;
+  opacity: 0;
+
+  transition-property: opacity, scale;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+.initia-terms-container {
+  background: #161717;
+  border: 1px solid #303437;
+  border-radius: 20px;
+
+  font-weight: 500;
+  color: #757C82;
+  overflow-y: auto;
+
+  padding: 24px;
+  font-size: 12px;
+}
+
+.initia-terms[data-screen-size="sm"] .initia-terms-container {
+  height: 80%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.initia-terms[data-screen-size="md"] .initia-terms-container {
+  height: 90%;
+  max-height: 577px;
+  width: 620px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-container {
+  height: 90%;
+  max-height: 830px;
+  width: 960px;
+  padding: 32px;
+
+  font-size: 14px;
+}
+
+.initia-terms-header {
+  font-weight: 600;
+  color: #F5F5F5;
+}
+
+.initia-terms[data-screen-size="sm"] .initia-terms-header {
+  font-size: 14px;
+}
+
+.initia-terms[data-screen-size="md"] .initia-terms-header {
+  font-size: 18px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-header {
+  font-size: 24px;
+}
+
+.initia-terms-description-info-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-description-info-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.initia-terms-description {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  line-height: 12px;
+}
+
+.initia-terms-body {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #383D42;
+  border-radius: 8px;
+  overflow-y: auto;
+
+  height: 355px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-body {
+  height: 528px;
+  font-size: 14px;
+}
+
+.initia-terms-body a {
+  color: #A1A6AA;
+}
+
+.initia-terms-body a:hover {
+  color: #D1D9E0;
+}
+
+.initia-terms-body-topic {
+  margin-bottom: 4px;
+  color: #D1D9E0;
+  font-weight: 600;
+}
+
+.initia-terms[data-screen-size="md"] .initia-terms-body-topic {
+  font-size: 14px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-body-topic {
+  font-size: 16px;
+}
+
+.initia-terms-body p:nth-child(even) {
+  margin-top: 18px;
+}
+
+.initia-terms-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-footer {
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.initia-terms-footer-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.initia-terms-footer-checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #757C82;
+  border-radius: 2px;
+
+  background-color: #161717;
+  .initia-check-icon {
+    display: none;
+  }
+}
+
+.initia-terms-footer-checkbox:hover .initia-terms-footer-checkbox-box {
+  border-color: #F5F5F5;
+}
+
+.initia-terms-footer.checked .initia-terms-footer-checkbox-box {
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+
+  .initia-check-icon {
+    display: block;
+  }
+}
+
+.initia-terms-footer-checkbox-label {
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.initia-terms-footer-accept-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+  color: #070708;
+  font-weight: 600;
+
+  cursor: not-allowed;
+  background-color: #757C82;
+}
+
+.initia-terms[data-screen-size="sm"] .initia-terms-footer-accept-button {
+  height: 56px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.initia-terms[data-screen-size="md"] .initia-terms-footer-accept-button {
+  height: 32px;
+  width: 168px;
+  font-size: 12px;
+}
+
+.initia-terms[data-screen-size="lg"] .initia-terms-footer-accept-button {
+  height: 56px;
+  width: 360px;
+  font-size: 16px;
+}
+
+.initia-terms-footer.checked .initia-terms-footer-accept-button {
+  cursor: pointer;
+  background-color: #F5F5F5;
+}
+
+.initia-terms-footer.checked .initia-terms-footer-accept-button:hover {
+  background-color: white;
+}

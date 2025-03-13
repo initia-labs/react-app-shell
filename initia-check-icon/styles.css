@@ -1,0 +1,22 @@
+.initia-check-icon.dark {
+  fill: #070708;
+}
+
+.initia-check-icon.white {
+  fill: #F5F5F5;
+}
+
+.initia-check-icon.xs {
+  width: 12.8px;
+  height: 12.8px;
+}
+
+.initia-check-icon.sm {
+  width: 16px;
+  height: 16px;
+}
+
+.initia-check-icon.md {
+  width: 20px;
+  height: 20px;
+}
