@@ -65,7 +65,7 @@
 .initia-terms-header {
   font-weight: 600;
   color: #F5F5F5;
-  margin: 0px;
+  margin: 0;
 }
 
 .initia-terms[data-screen-size="sm"] .initia-terms-header {
