@@ -65,6 +65,7 @@
 .initia-terms-header {
   font-weight: 600;
   color: #F5F5F5;
+  margin: 0px;
 }
 
 .initia-terms[data-screen-size="sm"] .initia-terms-header {
@@ -115,10 +116,15 @@
 
 .initia-terms-body a {
   color: #A1A6AA;
+  text-decoration: none;
 }
 
 .initia-terms-body a:hover {
   color: #D1D9E0;
+}
+
+.initia-terms-body p:not(.initia-terms-body-topic) {
+  margin: 0;
 }
 
 .initia-terms-body-topic {
@@ -200,6 +206,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  border: 0;
 
   color: #070708;
   font-weight: 600;

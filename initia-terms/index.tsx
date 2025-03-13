@@ -82,6 +82,7 @@ export const InitiaTerms = () => {
   useEffect(() => {
     if (!isAccepted) {
       const controller = new AbortController();
+      document.body.style.overflow = "hidden";
       window.addEventListener(
         "resize",
         () => {
@@ -92,7 +93,10 @@ export const InitiaTerms = () => {
         },
         { signal: controller.signal }
       );
-      return () => controller.abort();
+      return () => {
+        controller.abort();
+        document.body.style.overflow = "auto";
+      };
     }
     return () => {};
   }, [isAccepted]);
