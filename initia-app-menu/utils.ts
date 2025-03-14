@@ -7,14 +7,7 @@ import type {
 } from "react";
 import { SHOW_APP_MENU_CLASS } from "./constants";
 import { isSm } from "../utils";
-
-export type AppType =
-  | "app"
-  | "scan"
-  | "bridge"
-  | "faucet"
-  | "multisig"
-  | "airdrop";
+import { AppType } from "./types";
 
 export const getAppUrl = (app: AppType, subdomain?: string) =>
   subdomain

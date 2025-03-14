@@ -3,7 +3,6 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { APP_LIST, SHOW_APP_MENU_CLASS } from "./constants";
 import {
-  AppType,
   getAppLogoUrl,
   getAppUrl,
   handleDrawerClose,
@@ -14,6 +13,7 @@ import {
 } from "./utils";
 import { InitiaCheckIcon } from "../initia-check-icon";
 import { ScreenSize, isSm } from "../utils";
+import { AppType } from "./types";
 
 const AppMenuListItemLogo = ({ app }: { app: AppType }) => (
   <img
