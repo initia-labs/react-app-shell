@@ -10,10 +10,10 @@ import { isSm } from "../utils";
 
 export type AppType =
   | "app"
-  | "bridge"
   | "scan"
-  | "multisig"
+  | "bridge"
   | "faucet"
+  | "multisig"
   | "airdrop";
 
 export const getAppUrl = (app: AppType, subdomain?: string) =>

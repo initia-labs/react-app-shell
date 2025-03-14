@@ -32,10 +32,14 @@ const AppMenuList = ({
   subdomain?: string;
   size: ScreenSize;
 }) => {
-  const hasFaucet = subdomain === "testnet";
-  const filteredApps = hasFaucet
-    ? APP_LIST
-    : APP_LIST.filter((app) => app !== "faucet");
+  let filteredApps = APP_LIST;
+
+  // if not testnet, remove faucet
+  if (subdomain !== "testnet")
+    filteredApps = filteredApps.filter((app) => app !== "faucet");
+
+  // if not mainnet, remove airdrop
+  if (subdomain) filteredApps = filteredApps.filter((app) => app !== "airdrop");
 
   return (
     <div className="initia-app-menu-list">
