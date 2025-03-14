@@ -7,13 +7,14 @@ import type {
 } from "react";
 import { SHOW_APP_MENU_CLASS } from "./constants";
 import { isSm } from "../utils";
+import { AppType } from "./types";
 
-export const getAppUrl = (app: string, subdomain?: string) =>
+export const getAppUrl = (app: AppType, subdomain?: string) =>
   subdomain
     ? `https://${app}.${subdomain}.initia.xyz`
     : `https://${app}.initia.xyz`;
 
-export const getAppLogoUrl = (app: string) =>
+export const getAppLogoUrl = (app: AppType) =>
   `https://assets.initia.xyz/images/dapps/${app}/logo.webp`;
 
 export const handleDrawerOpen = (

@@ -13,8 +13,9 @@ import {
 } from "./utils";
 import { InitiaCheckIcon } from "../initia-check-icon";
 import { ScreenSize, isSm } from "../utils";
+import { AppType } from "./types";
 
-const AppMenuListItemLogo = ({ app }: { app: string }) => (
+const AppMenuListItemLogo = ({ app }: { app: AppType }) => (
   <img
     className="initia-app-menu-list-item-logo"
     src={getAppLogoUrl(app)}
@@ -27,14 +28,18 @@ const AppMenuList = ({
   subdomain,
   size,
 }: {
-  currentApp: string;
+  currentApp: AppType;
   subdomain?: string;
   size: ScreenSize;
 }) => {
-  const hasFaucet = subdomain === "testnet";
-  const filteredApps = hasFaucet
-    ? APP_LIST
-    : APP_LIST.filter((app) => app !== "faucet");
+  let filteredApps = APP_LIST;
+
+  // if not testnet, remove faucet
+  if (subdomain !== "testnet")
+    filteredApps = filteredApps.filter((app) => app !== "faucet");
+
+  // if not mainnet, remove airdrop
+  if (subdomain) filteredApps = filteredApps.filter((app) => app !== "airdrop");
 
   return (
     <div className="initia-app-menu-list">
@@ -63,7 +68,7 @@ const AppMenuList = ({
 
 const AppMenuDrawer = forwardRef<
   HTMLDivElement,
-  { currentApp: string; subdomain?: string; handleClose: () => void }
+  { currentApp: AppType; subdomain?: string; handleClose: () => void }
 >(({ currentApp, subdomain, handleClose }, ref) => (
   <div className="initia-app-menu-drawer" onClick={handleClose} ref={ref}>
     <div
@@ -81,7 +86,7 @@ const AppMenuDrawer = forwardRef<
 
 const AppMenuPopover = forwardRef<
   HTMLDivElement,
-  { currentApp: string; subdomain?: string }
+  { currentApp: AppType; subdomain?: string }
 >(({ currentApp, subdomain }, ref) => (
   <div className="initia-app-menu-popover" ref={ref}>
     <AppMenuList
@@ -96,7 +101,7 @@ export const InitiaAppMenu = ({
   app,
   subdomain,
 }: {
-  app: string;
+  app: AppType;
   subdomain?: string;
 }) => {
   const triggerRef = useRef<HTMLDivElement>(null);
