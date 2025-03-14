@@ -3,6 +3,7 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { APP_LIST, SHOW_APP_MENU_CLASS } from "./constants";
 import {
+  AppType,
   getAppLogoUrl,
   getAppUrl,
   handleDrawerClose,
@@ -14,7 +15,7 @@ import {
 import { InitiaCheckIcon } from "../initia-check-icon";
 import { ScreenSize, isSm } from "../utils";
 
-const AppMenuListItemLogo = ({ app }: { app: string }) => (
+const AppMenuListItemLogo = ({ app }: { app: AppType }) => (
   <img
     className="initia-app-menu-list-item-logo"
     src={getAppLogoUrl(app)}
@@ -27,7 +28,7 @@ const AppMenuList = ({
   subdomain,
   size,
 }: {
-  currentApp: string;
+  currentApp: AppType;
   subdomain?: string;
   size: ScreenSize;
 }) => {
@@ -63,7 +64,7 @@ const AppMenuList = ({
 
 const AppMenuDrawer = forwardRef<
   HTMLDivElement,
-  { currentApp: string; subdomain?: string; handleClose: () => void }
+  { currentApp: AppType; subdomain?: string; handleClose: () => void }
 >(({ currentApp, subdomain, handleClose }, ref) => (
   <div className="initia-app-menu-drawer" onClick={handleClose} ref={ref}>
     <div
@@ -81,7 +82,7 @@ const AppMenuDrawer = forwardRef<
 
 const AppMenuPopover = forwardRef<
   HTMLDivElement,
-  { currentApp: string; subdomain?: string }
+  { currentApp: AppType; subdomain?: string }
 >(({ currentApp, subdomain }, ref) => (
   <div className="initia-app-menu-popover" ref={ref}>
     <AppMenuList
@@ -96,7 +97,7 @@ export const InitiaAppMenu = ({
   app,
   subdomain,
 }: {
-  app: string;
+  app: AppType;
   subdomain?: string;
 }) => {
   const triggerRef = useRef<HTMLDivElement>(null);

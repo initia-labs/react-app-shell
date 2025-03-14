@@ -8,12 +8,20 @@ import type {
 import { SHOW_APP_MENU_CLASS } from "./constants";
 import { isSm } from "../utils";
 
-export const getAppUrl = (app: string, subdomain?: string) =>
+export type AppType =
+  | "app"
+  | "bridge"
+  | "scan"
+  | "multisig"
+  | "faucet"
+  | "airdrop";
+
+export const getAppUrl = (app: AppType, subdomain?: string) =>
   subdomain
     ? `https://${app}.${subdomain}.initia.xyz`
     : `https://${app}.initia.xyz`;
 
-export const getAppLogoUrl = (app: string) =>
+export const getAppLogoUrl = (app: AppType) =>
   `https://assets.initia.xyz/images/dapps/${app}/logo.webp`;
 
 export const handleDrawerOpen = (
